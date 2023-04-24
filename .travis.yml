@@ -4,4 +4,4 @@ services:
 
 before_install:
   - docker build -t alimuratkuslu/kelimeoyunu-backend -f Dockerfile.dev .
-  - docker build -t alimuratkuslu/kelimeoyunu-frontend -f Dockerfile.dev ./frontend 
+  - docker build -t alimuratkuslu/kelimeoyunu-frontend -f frontend/Dockerfile.dev .
