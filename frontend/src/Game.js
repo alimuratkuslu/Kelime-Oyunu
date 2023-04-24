@@ -147,8 +147,8 @@ function Game() {
 
   return (
     <div className='app'>
-      <div>
-        <p style={{fontSize: '32px'}}>{displayedAnswer.split('').map((char, index) => {
+      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+        <p style={{fontSize: '50px'}}>{displayedAnswer.split('').map((char, index) => {
             if (char === '_') {
               return <span key={index} style={{marginRight: '5px'}}>{char}</span>
             } else {
@@ -179,7 +179,7 @@ function Game() {
             <div className='question-section'>
               <h2>Soru {currentQuestion + 1}</h2>
               <br />
-              <Typography variant='body1'>{questions[currentQuestion].description}</Typography>
+              <Typography variant='body1' style={{ fontSize: '20px'}}>{questions[currentQuestion].description}</Typography>
             </div>
             <br />
             <div className='answer-section'>

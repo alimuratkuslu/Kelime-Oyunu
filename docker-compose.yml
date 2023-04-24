@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+  kelimeoyunu-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: "kelimeoyunu-backend:0.0.1"
+    container_name: kelimeoyunu-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - kelimeoyunu-network
+
+  kelimeoyunu-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    image: "kelimeoyunu-frontend:0.0.1"
+    container_name: kelimeoyunu-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - kelimeoyunu-network
+    links:
+      - kelimeoyunu-backend
+
+networks:
+  kelimeoyunu-network:
+    driver: bridge
