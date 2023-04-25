@@ -10,6 +10,9 @@ before_install:
 after_succes:
   - docker build -t alimuratkuslu/kelimeoyunu-backend -f Dockerfile .
   - docker build -t alimuratkuslu/kelimeoyunu-frontend -f ./frontend/Dockerfile ./frontend
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push alimuratkuslu/kelimeoyunu-backend
+  - docker push alimuratkuslu/kelimeoyunu-frontend
 
 
 
