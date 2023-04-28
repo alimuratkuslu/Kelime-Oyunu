@@ -1,0 +1,17 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "kelimeoyunu-backend",
+            "image": "alimuratkuslu/kelimeoyunu-backend",
+            "hostname": "kelimeoyunu-backend",
+            "essential": false
+        },
+        {
+            "name": "kelimeoyunu-frontend",
+            "image": "alimuratkuslu/kelimeoyunu-frontend",
+            "hostname": "kelimeoyunu-frontend",
+            "essential": true
+        }
+    ]
+}

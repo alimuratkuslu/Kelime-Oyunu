@@ -4,4 +4,16 @@ services:
 
 before_install:
   - docker build -t alimuratkuslu/kelimeoyunu-backend -f Dockerfile .
-  - docker build . -t alimuratkuslu/kelimeoyunu-frontend frontend/Dockerfile 
+  - docker build -t alimuratkuslu/kelimeoyunu-frontend -f frontend/Dockerfile .
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-north-1'
+  app: 'multi-docker'
+  env: 'Multi-docker-env'
+  bucket_name: 'elasticbeanstalk-eu-north-1-227384213485'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
