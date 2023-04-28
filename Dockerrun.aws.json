@@ -5,13 +5,15 @@
             "name": "kelimeoyunu-backend",
             "image": "alimuratkuslu/kelimeoyunu-backend",
             "hostname": "kelimeoyunu-backend",
-            "essential": false
+            "essential": false,
+            "memory": 512
         },
         {
             "name": "kelimeoyunu-frontend",
             "image": "alimuratkuslu/kelimeoyunu-frontend",
             "hostname": "kelimeoyunu-frontend",
-            "essential": true
+            "essential": true,
+            "memory": 512
         }
     ]
 }
